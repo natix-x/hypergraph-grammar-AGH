@@ -1,13 +1,8 @@
-import sys
-import os
-import unittest
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
-
 from hypergrammar.hypergraph import Hypergraph
 from hypergrammar.edge import Edge, EdgeType
 from hypergrammar.productions.prod_10 import Prod10
 
-class TestProd10(unittest.TestCase):
+class TestProd10():
     """Test suite for Production 10 (Propagating refinement to boundary edges)."""
 
     def _create_hexagon(self, q_r: int, e_r: int):
@@ -130,6 +125,3 @@ class TestProd10(unittest.TestCase):
 
         # Assert
         assert result is None, "Should check that Q has exactly 6 vertices"
-
-if __name__ == "__main__":
-    unittest.main()

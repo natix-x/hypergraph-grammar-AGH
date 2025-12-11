@@ -1,13 +1,8 @@
-import sys
-import os
-import unittest
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
-
 from hypergrammar.hypergraph import Hypergraph
 from hypergrammar.edge import Edge, EdgeType
 from hypergrammar.productions.prod_9 import Prod9
 
-class TestProd9(unittest.TestCase):
+class TestProd9():
     """Test suite for Production 9 (Marking Q for refinement)."""
 
     def test_apply_valid_hexagon_r0(self):
@@ -99,6 +94,3 @@ class TestProd9(unittest.TestCase):
         # Assert
         assert result is not None
         assert list(result.get_edges())[0].get_parameters()["R"] == 1
-
-if __name__ == "__main__":
-    unittest.main()
